@@ -6,6 +6,7 @@
 [![DVC](https://img.shields.io/badge/DVC-Data_Version_Control-blueviolet.svg)](https://dvc.org/)
 [![MLflow](https://img.shields.io/badge/MLflow-Tracking-blue.svg)](https://mlflow.org/)
 [![Docker](https://img.shields.io/badge/Docker-Container-2496ED.svg?logo=docker&logoColor=white)](https://www.docker.com/)
+[![CI Pipeline](https://github.com/amangupta982/Youtube-Sentiment-Analysis/actions/workflows/ci.yml/badge.svg)](https://github.com/amangupta982/Youtube-Sentiment-Analysis/actions)
 
 An end-to-end Machine Learning pipeline and Chrome Extension for analyzing the sentiment of YouTube comments in real-time. This project features a robust data processing and modeling pipeline tracked by **DVC** and **MLflow**, serving predictions via a **Flask API**.
 
@@ -19,6 +20,7 @@ An end-to-end Machine Learning pipeline and Chrome Extension for analyzing the s
 - [📈 Model Performance & Hyperparameter Tuning](#-model-performance--hyperparameter-tuning)
 - [🚀 Setup & Installation](#-setup--installation)
 - [🐳 Running with Docker](#-running-with-docker)
+- [⚙️ CI/CD Pipeline](#️-cicd-pipeline)
 - [🌐 Flask API Backend](#-flask-api-backend)
 - [🧩 Installing the Chrome Extension](#-installing-the-chrome-extension)
 
@@ -100,6 +102,20 @@ docker build -t youtube-sentiment-api .
 docker run -p 5001:5001 youtube-sentiment-api
 ```
 The Flask API will now be accessible at `http://localhost:5001`.
+
+---
+
+## ⚙️ CI/CD Pipeline
+
+This repository is equipped with a robust Continuous Integration (CI) pipeline powered by **GitHub Actions**. 
+
+On every `push` and `pull_request` to the `main` branch, the pipeline automatically:
+1. Checks out the source code.
+2. Sets up Python 3.11.
+3. Installs all project dependencies from `requirements.txt`.
+4. Builds the Docker container to guarantee that the application can be packaged and deployed reliably without errors.
+
+Check the badge at the top of this README to see the real-time build status!
 
 ---
 
